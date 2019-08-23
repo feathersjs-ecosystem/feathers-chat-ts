@@ -1,7 +1,7 @@
 # feathers-chat-ts
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/feathersjs/feathers-chat-ts.svg)](https://greenkeeper.io/)
-[![Build Status](https://img.shields.io/travis/feathersjs/feathers-chat-ts/master.svg)](https://travis-ci.org/feathersjs/feathers-chat)
+[![Build Status](https://img.shields.io/travis/feathersjs/feathers-chat-ts/master.svg)](https://travis-ci.org/feathersjs/feathers-chat-ts)
 
 > A FeathersJS chat application written in TypeScript
 
