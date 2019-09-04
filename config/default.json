@@ -8,6 +8,13 @@
   },
   "ts": true,
   "authentication": {
+    "oauth": {
+      "redirect": "/",
+      "github": {
+        "key": "<Client ID>",
+        "secret": "<Client secret>"
+      }
+    },
     "entity": "user",
     "service": "users",
     "secret": "Un5PhBN7NgRdM6EvAm7h/Pb4JkA=",
