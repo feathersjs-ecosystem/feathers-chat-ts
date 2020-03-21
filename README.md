@@ -1,6 +1,6 @@
 # feathers-chat-ts
 
-[![Build Status](https://img.shields.io/travis/feathersjs/feathers-chat-ts/master.svg)](https://travis-ci.org/feathersjs/feathers-chat-ts)
+[![CI](https://github.com/feathersjs/feathers-chat-ts/workflows/CI/badge.svg)](https://github.com/feathersjs/feathers-chat-ts/actions?query=workflow%3ACI)
 
 > A FeathersJS chat application written in TypeScript
 
