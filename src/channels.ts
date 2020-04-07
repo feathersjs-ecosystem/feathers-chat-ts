@@ -35,7 +35,7 @@ export default function(app: Application) {
       
       // Easily organize users by email and userid for things like messaging
       // app.channel(`emails/${user.email}`).join(connection);
-      // app.channel(`userIds/$(user.id}`).join(connection);
+      // app.channel(`userIds/${user.id}`).join(connection);
     }
   });
 
