@@ -57,7 +57,7 @@
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mocha": "^8.0.4",
     "@types/nedb": "^1.8.11",
-    "@types/serve-favicon": "^2.5.1",
+    "@types/serve-favicon": "^2.5.2",
     "axios": "^0.21.0",
     "mocha": "^8.2.1",
     "nodemon": "^2.0.6",
