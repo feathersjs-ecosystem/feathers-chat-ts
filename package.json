@@ -52,7 +52,7 @@
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/compression": "^1.7.0",
-    "@types/cors": "^2.8.9",
+    "@types/cors": "^2.8.10",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mocha": "^8.2.0",
     "@types/nedb": "^1.8.11",
