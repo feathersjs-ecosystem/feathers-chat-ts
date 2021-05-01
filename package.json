@@ -53,7 +53,7 @@
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/compression": "^1.7.0",
     "@types/cors": "^2.8.10",
-    "@types/jsonwebtoken": "^8.5.0",
+    "@types/jsonwebtoken": "^8.5.1",
     "@types/mocha": "^8.2.1",
     "@types/nedb": "^1.8.11",
     "@types/serve-favicon": "^2.5.2",
