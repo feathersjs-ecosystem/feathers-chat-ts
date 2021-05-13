@@ -9,15 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js 15
+    - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: 15
-    - run: npm install
-    - run: npm test
+        node-version: '15.x'
+    - run: npm ci
     - run: |
         git config user.name "GitHub Actions Bot"
-        git config user.email "<>"
+        git config user.email "hello@feathersjs.com"
         git checkout -b update-dependencies-$GITHUB_RUN_ID
     - run: |
         npm run update-dependencies
@@ -28,4 +27,4 @@ jobs:
     - run: |
         gh pr create --title "chore(dependencies): Update all dependencies" --body ""
       env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        GITHUB_TOKEN: ${{secrets.CI_ACCESS_TOKEN}}
