@@ -16,7 +16,7 @@ const getGravatar = (email: string) => {
 }
 
 // A type interface for our user (it does not validate any data)
-interface UserData {
+export interface UserData {
   _id?: string;
   email: string;
   password: string;

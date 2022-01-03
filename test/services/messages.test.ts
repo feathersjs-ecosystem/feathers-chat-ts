@@ -10,7 +10,7 @@ describe('\'messages\' service', () => {
 
   it('creates and processes message, adds user information', async () => {
     // Create a new user we can use for testing
-    const user = await app.service('users').create({
+    const user: any = await app.service('users').create({
       email: 'messagetest@example.com',
       password: 'supersecret'
     });

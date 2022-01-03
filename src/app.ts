@@ -2,7 +2,6 @@ import path from 'path';
 import favicon from 'serve-favicon';
 import compress from 'compression';
 import helmet from 'helmet';
-import cors from 'cors';
 
 import feathers from '@feathersjs/feathers';
 import configuration from '@feathersjs/configuration';
@@ -24,8 +23,9 @@ const app: Application = express(feathers());
 // Load app configuration
 app.configure(configuration());
 // Enable security, CORS, compression, favicon and body parsing
-app.use(helmet());
-app.use(cors());
+app.use(helmet({
+  contentSecurityPolicy: false
+}));
 app.use(compress());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

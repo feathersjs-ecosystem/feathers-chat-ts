@@ -9,7 +9,7 @@ describe('\'users\' service', () => {
   });
 
   it('creates a user, encrypts password and adds gravatar', async () => {
-    const user = await app.service('users').create({
+    const user: any = await app.service('users').create({
       email: 'test@example.com',
       password: 'secret'
     });
@@ -24,7 +24,7 @@ describe('\'users\' service', () => {
     // Setting `provider` indicates an external request
     const params = { provider: 'rest' };
 
-    const user = await app.service('users').create({
+    const user: any = await app.service('users').create({
       email: 'test2@example.com',
       password: 'secret'
     }, params);
