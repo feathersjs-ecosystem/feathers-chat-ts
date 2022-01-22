@@ -16,9 +16,8 @@ const getUrl = (pathname?: string) => url.format({
 describe('Feathers application tests', () => {
   let server: Server;
 
-  before(function(done) {
-    server = app.listen(port);
-    server.once('listening', () => done());
+  before(async () => {
+    server = await app.listen(port);
   });
 
   after(function(done) {

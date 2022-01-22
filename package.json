@@ -19,8 +19,8 @@
     "config": "config/"
   },
   "engines": {
-    "node": "^11.0.0",
-    "npm": ">= 3.0.0"
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
   },
   "scripts": {
     "test": "npm run compile && npm run coverage",
@@ -33,14 +33,14 @@
     "update-dependencies": "ncu -u"
   },
   "dependencies": {
-    "@feathersjs/authentication": "^4.5.11",
-    "@feathersjs/authentication-local": "^4.5.11",
-    "@feathersjs/authentication-oauth": "^4.5.11",
-    "@feathersjs/configuration": "^4.5.11",
-    "@feathersjs/errors": "^4.5.11",
-    "@feathersjs/express": "^4.5.11",
-    "@feathersjs/feathers": "^4.5.11",
-    "@feathersjs/socketio": "^4.5.11",
+    "@feathersjs/authentication": "^5.0.0-pre.16",
+    "@feathersjs/authentication-local": "^5.0.0-pre.16",
+    "@feathersjs/authentication-oauth": "^5.0.0-pre.16",
+    "@feathersjs/configuration": "^5.0.0-pre.16",
+    "@feathersjs/errors": "^5.0.0-pre.16",
+    "@feathersjs/express": "^5.0.0-pre.16",
+    "@feathersjs/feathers": "^5.0.0-pre.16",
+    "@feathersjs/socketio": "^5.0.0-pre.16",
     "@seald-io/nedb": "^2.2.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",

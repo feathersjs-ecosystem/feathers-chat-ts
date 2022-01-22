@@ -1,8 +1,8 @@
 // Use this hook to manipulate incoming or outgoing data.
 // For more information on hooks see: http://docs.feathersjs.com/api/hooks.html
-import { Hook, HookContext } from '@feathersjs/feathers';
+import { HookContext } from '../declarations';
 
-export default (): Hook => {
+export default () => {
   return async (context: HookContext) => {
     // Get `app`, `method`, `params` and `result` from the hook context
     const { app, method, result, params } = context;

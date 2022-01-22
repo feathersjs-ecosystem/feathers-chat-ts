@@ -7,7 +7,7 @@ import { Application } from './declarations';
 
 declare module './declarations' {
   interface ServiceTypes {
-    'authentication': AuthenticationService & ServiceAddons<any>;
+    'authentication': AuthenticationService;
   }
 }
 
@@ -34,6 +34,6 @@ export default function(app: Application) {
   authentication.register('local', new LocalStrategy());
   authentication.register('github', new GitHubStrategy());
 
-  app.use('/authentication', authentication);
+  app.use('authentication', authentication);
   app.configure(expressOauth());
 }

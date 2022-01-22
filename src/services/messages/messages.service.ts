@@ -8,7 +8,7 @@ import hooks from './messages.hooks';
 // Add this service to the service type index
 declare module '../../declarations' {
   interface ServiceTypes {
-    'messages': Messages & ServiceAddons<any>;
+    'messages': Messages;
   }
 }
 
@@ -22,7 +22,7 @@ export default function (app: Application) {
   };
 
   // Initialize our service with any options it requires
-  app.use('/messages', new Messages(options, app));
+  app.use('messages', new Messages(options, app));
 
   // Get our initialized service so that we can register hooks
   const service = app.service('messages');
