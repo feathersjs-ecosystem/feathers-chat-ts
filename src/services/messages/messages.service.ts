@@ -1,14 +1,19 @@
 // Initializes the `messages` service on path `/messages`
-import { ServiceAddons } from '@feathersjs/feathers';
+import { Params, ServiceInterface } from '@feathersjs/feathers';
+import { resolveAll } from '@feathersjs/schema';
+
 import { Application } from '../../declarations';
 import { Messages } from './messages.class';
 import createModel from '../../models/messages.model';
 import hooks from './messages.hooks';
+import { messageResolvers, MessageData, MessageResult, MessageQuery } from '../../schema/messages.schema';
+
+type MessageService = ServiceInterface<MessageResult, MessageData, Params<MessageQuery>>
 
 // Add this service to the service type index
 declare module '../../declarations' {
   interface ServiceTypes {
-    'messages': Messages;
+    'messages': MessageService
   }
 }
 
@@ -22,10 +27,13 @@ export default function (app: Application) {
   };
 
   // Initialize our service with any options it requires
-  app.use('messages', new Messages(options, app));
+  app.use('messages', new Messages(options, app) as MessageService);
 
   // Get our initialized service so that we can register hooks
   const service = app.service('messages');
 
+  service.hooks([
+    resolveAll(messageResolvers)
+  ]);
   service.hooks(hooks);
 }
