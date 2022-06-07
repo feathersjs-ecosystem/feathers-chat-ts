@@ -1,12 +1,11 @@
 // Initializes the `users` service on path `/users`
-import { resolveAll } from '@feathersjs/schema';
 import { Params, ServiceInterface } from '@feathersjs/feathers';
 
 import { Application } from '../../declarations';
 import { Users } from './users.class';
 import createModel from '../../models/users.model';
 import hooks from './users.hooks';
-import { UserData, UserQuery, userResolvers, UserResult } from '../../schema/users.schema';
+import { UserData, UserQuery, UserResult } from '../../schema/users.schema';
 
 type UserService = ServiceInterface<UserResult, UserData, Params<UserQuery>>
 
@@ -32,8 +31,5 @@ export default function (app: Application) {
   // Get our initialized service so that we can register hooks
   const service = app.service('users');
 
-  service.hooks([
-    resolveAll(userResolvers)
-  ]);
   service.hooks(hooks);
 }

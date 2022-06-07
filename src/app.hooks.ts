@@ -1,6 +1,8 @@
 // Application hooks that run for every service
 // Don't remove this comment. It's needed to format import lines nicely.
 
+import { HookContext } from './declarations';
+
 export default {
   before: {
     all: [],
@@ -23,7 +25,11 @@ export default {
   },
 
   error: {
-    all: [],
+    all: [
+      (context: HookContext) => {
+        console.error(context.error)
+      }
+    ],
     find: [],
     get: [],
     create: [],

@@ -1,9 +1,21 @@
-import * as authentication from '@feathersjs/authentication';
-// Don't remove this comment. It's needed to format import lines nicely.
-
-const { authenticate } = authentication.hooks;
+import { authenticate } from '@feathersjs/authentication';
+import { resolveAll } from '@feathersjs/schema';
+import { messageResolvers } from '../../schema/messages.schema';
 
 export default {
+  around: {
+    all: [
+      authenticate('jwt'),
+      resolveAll(messageResolvers)
+    ],
+    find: [],
+    get: [],
+    create: [],
+    update: [],
+    patch: [],
+    remove: []
+  },
+
   before: {
     all: [],
     find: [],

@@ -27,9 +27,7 @@ export const messageDataResolver = resolve<MessageData, HookContext>({
   schema: messageDataSchema,
   validate: 'before',
   properties: {
-    userId: async (_value, _message, context) => {
-      return context.params.user._id;
-    }
+    userId: async (_value, _message, context) => context.params.user._id
   }
 })
 

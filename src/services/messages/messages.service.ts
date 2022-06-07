@@ -32,8 +32,5 @@ export default function (app: Application) {
   // Get our initialized service so that we can register hooks
   const service = app.service('messages');
 
-  service.hooks([
-    resolveAll(messageResolvers)
-  ]);
   service.hooks(hooks);
 }

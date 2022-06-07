@@ -2,18 +2,12 @@ import crypto from 'crypto';
 import { schema, resolve, querySyntax, Infer } from '@feathersjs/schema'
 
 import { HookContext } from '../declarations'
+import { LocalStrategy } from '@feathersjs/authentication-local/lib';
 
 // The Gravatar image service
 const gravatarUrl = 'https://s.gravatar.com/avatar';
 // The size query. Our chat needs 60px images
 const query = 's=60';
-// Returns the Gravatar image for an email
-const getGravatar = (email: string) => {
-  // Gravatar uses MD5 hashes from an email address (all lowercase) to get the image
-  const hash = crypto.createHash('md5').update(email.toLowerCase()).digest('hex');
-  // Return the full avatar URL
-  return `${gravatarUrl}/${hash}?${query}`;
-}
 
 // Schema and resolver for the basic data model (e.g. creating new entries)
 export const userDataSchema = schema({
@@ -43,7 +37,18 @@ export const userDataResolver = resolve<UserData, HookContext>({
   schema: userDataSchema,
   validate: 'before',
   properties: {
-    avatar: async (value, user) => value || getGravatar(user.email)
+    avatar: async (_value, user) => {
+      // Gravatar uses MD5 hashes from an email address (all lowercase) to get the image
+      const hash = crypto.createHash('md5').update(user.email.toLowerCase()).digest('hex');
+      // Return the full avatar URL
+      return `${gravatarUrl}/${hash}?${query}`;
+    },
+    password: async (value, _user, context) => {
+      const authService = context.app.service('authentication')
+      const localStrategy = authService.getStrategy('local') as LocalStrategy
+
+      return localStrategy.hashPassword(value as string, context.params)
+    }
   }
 })
 
