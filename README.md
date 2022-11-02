@@ -1,5 +1,7 @@
 # feathers-chat-ts
 
+> __Important:__ This repository has been consolidated into https://github.com/feathersjs/feathers-chat
+
 [![CI](https://github.com/feathersjs/feathers-chat-ts/workflows/CI/badge.svg)](https://github.com/feathersjs/feathers-chat-ts/actions?query=workflow%3ACI)
 
 > A FeathersJS chat application written in TypeScript
